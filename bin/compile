@@ -34,8 +34,8 @@ if [ -f www/Procfile ]; then
 fi
 
 
-MYCRYPT_URL="$RESOURCE_BASE_URL/mycypt-$APACHE_VERSION.tar.gz"
-echo "-----> Bundling Mycrypt version $APACHE_VERSION"
+MYCRYPT_URL="$RESOURCE_BASE_URL/mycypt-$MYCRYPT_VERSION.tar.gz"
+echo "-----> Bundling Mycrypt version $MYCRYPT_VERSION"
 curl --silent --max-time 60 --location "$MYCRYPT_URL" | tar xz
 
 APACHE_URL="$RESOURCE_BASE_URL/apache-$APACHE_VERSION.tar.gz"
