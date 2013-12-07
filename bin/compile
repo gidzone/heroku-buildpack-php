@@ -5,10 +5,12 @@
 set -e
 
 # config
-RESOURCE_BASE_URL="https://s3.amazonaws.com/heroku-php-buildpack"
-APACHE_VERSION="2.2.22"
+RESOURCE_BASE_URL="https://github.com/gidzone/heroku-buildpack-php/blob/master/"
+MYCRYPT_VERSION="2.5.8-2"
+MYCRYPT_PATH="mycrypt"
+APACHE_VERSION="2.2.26-2"
 APACHE_PATH="apache"
-PHP_VERSION="5.3.10"
+PHP_VERSION="5.3.27-2"
 PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
@@ -30,6 +32,11 @@ mv $CACHE_DIR/www .
 if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
+
+
+MYCRYPT_URL="$RESOURCE_BASE_URL/mycypt-$APACHE_VERSION.tar.gz"
+echo "-----> Bundling Mycrypt version $APACHE_VERSION"
+curl --silent --max-time 60 --location "$MYCRYPT_URL" | tar xz
 
 APACHE_URL="$RESOURCE_BASE_URL/apache-$APACHE_VERSION.tar.gz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
