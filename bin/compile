@@ -5,7 +5,7 @@
 set -e
 
 # config
-RESOURCE_BASE_URL="https://github.com/gidzone/heroku-buildpack-php/blob/master/"
+RESOURCE_BASE_URL="https://github.com/gidzone/heroku-buildpack-php/blob/master"
 MYCRYPT_VERSION="2.5.8-2"
 MYCRYPT_PATH="mycrypt"
 APACHE_VERSION="2.2.26-2"
