@@ -5,7 +5,7 @@
 set -e
 
 # config
-RESOURCE_BASE_URL="https://github.com/gidzone/heroku-buildpack-php/blob/master"
+RESOURCE_BASE_URL="https://s3.amazonaws.com/heroku-buildpack-php-cloudprofiler"
 MYCRYPT_VERSION="2.5.8-2"
 MYCRYPT_PATH="mycrypt"
 APACHE_VERSION="2.2.26-2"
@@ -32,7 +32,6 @@ mv $CACHE_DIR/www .
 if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
-
 
 MYCRYPT_URL="$RESOURCE_BASE_URL/mycypt-$MYCRYPT_VERSION.tar.gz"
 echo "-----> Bundling Mycrypt version $MYCRYPT_VERSION"
